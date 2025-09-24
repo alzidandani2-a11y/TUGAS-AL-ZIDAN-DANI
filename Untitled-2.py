@@ -1,0 +1,5 @@
+print ("hello world")
+print ("nama saya al zidan dani")
+print ("saya dari toboali")
+print ("kuliah di unmuh babel")
+print ("prodi ilmu komputer")
