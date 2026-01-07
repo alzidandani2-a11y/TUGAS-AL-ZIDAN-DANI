@@ -1,22 +1,16 @@
-# 1. Menerima input berupa 5 angka dari user
-angka_list = []
-for i in range(5):
-    angka = int(input(f"Masukkan angka ke-{i+1}: "))
-    angka_list.append(angka)
+def hitung_gaji(tarif_per_jam, jam_kerja_per_hari, hari_kerja):
+    total_jam = 0
+    for _ in range(hari_kerja):
+        if jam_kerja_per_hari > 8:
+            lembur = jam_kerja_per_hari - 8
+            total_jam += 8 + (lembur * 1.5)
+        else:
+            total_jam += jam_kerja_per_hari
+    return total_jam * tarif_per_jam
 
-# 2. List sudah tersimpan di angka_list
-print("Data angka:", angka_list)
+tarif = float(input("Tarif per jam: "))
+jam = int(input("Jam kerja per hari: "))
+hari = int(input("Jumlah hari kerja: "))
 
-# 3. Hitung jumlah genap dan ganjil
-jumlah_genap = 0
-jumlah_ganjil = 0
-
-for angka in angka_list:
-    if angka % 2 == 0:
-        jumlah_genap += 1
-    else:
-        jumlah_ganjil += 1
-
-# Tampilkan hasil
-print("Jumlah angka genap :", jumlah_genap)
-print("Jumlah angka ganjil:", jumlah_ganjil)
+gaji = hitung_gaji(tarif, jam, hari)
+print("Total gaji bulanan:", gaji)

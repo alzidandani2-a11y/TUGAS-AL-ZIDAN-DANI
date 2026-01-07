@@ -1,13 +1,31 @@
-# 1. Menerima input username
-username = input("Masukkan username: ")
+def tambah(a, b):
+    return a + b
 
-# 2–7. Mengecek syarat menggunakan if–elif–else
-if len(username) < 5:
-    print("Username tidak valid: minimal 5 karakter.")
-elif " " in username:
-    print("Username tidak valid: tidak boleh mengandung spasi.")
-elif not username[0].isalpha():
-    print("Username tidak valid: karakter pertama harus huruf.")
+def kurang(a, b):
+    return a - b
+
+def kali(a, b):
+    return a * b
+
+def bagi(a, b):
+    if b == 0:
+        return "Error: Pembagian dengan nol"
+    return a / b
+
+print("Pilih operasi:")
+print("1. Tambah\n2. Kurang\n3. Kali\n4. Bagi")
+
+pilih = input("Masukkan pilihan (1-4): ")
+a = float(input("Masukkan angka pertama: "))
+b = float(input("Masukkan angka kedua: "))
+
+if pilih == "1":
+    print("Hasil:", tambah(a, b))
+elif pilih == "2":
+    print("Hasil:", kurang(a, b))
+elif pilih == "3":
+    print("Hasil:", kali(a, b))
+elif pilih == "4":
+    print("Hasil:", bagi(a, b))
 else:
-    print("Username valid.")
-    
+    print("Pilihan tidak valid")
